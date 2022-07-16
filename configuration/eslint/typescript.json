@@ -8,6 +8,7 @@
       },
       "plugins": ["simple-import-sort", "prefer-arrow-functions"],
       "rules": {
+        "import/extensions": "off",
         "import/order": "off",
         "prefer-arrow-functions/prefer-arrow-functions": [
           "error",

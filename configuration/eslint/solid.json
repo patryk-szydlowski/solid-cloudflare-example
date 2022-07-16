@@ -3,7 +3,10 @@
     {
       "extends": ["canonical/react", "canonical/jsx-a11y", "plugin:solid/typescript"],
       "files": ["*.tsx"],
-      "plugins": ["solid"]
+      "plugins": ["solid"],
+      "rules": {
+        "react/no-unknown-property": "off"
+      }
     }
   ]
 }

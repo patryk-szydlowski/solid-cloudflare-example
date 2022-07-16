@@ -4,6 +4,8 @@ import { Route, Routes } from "solid-start/data";
 import { ErrorBoundary } from "solid-start/error-boundary";
 import { Links, Meta, Scripts } from "solid-start/root";
 
+import { Text } from "~/components/text";
+
 export default () => (
   <html lang="en">
     <head>
@@ -16,7 +18,7 @@ export default () => (
       <ErrorBoundary>
         <Suspense>
           <Routes>
-            <Route element={<div>Hello world!</div>} path="/" />
+            <Route element={<Text>Hello world!</Text>} path="/" />
           </Routes>
         </Suspense>
       </ErrorBoundary>
