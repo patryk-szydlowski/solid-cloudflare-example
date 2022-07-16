@@ -6,6 +6,7 @@
 # generated outputs
 dist
 .solid
+functions
 .eslintcache
 *.tsbuildinfo
 
