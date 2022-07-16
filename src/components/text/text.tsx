@@ -1,5 +1,7 @@
 import { type ParentProps } from "solid-js";
 
-import { text } from "./text.css";
+import styles from "./text.module.css";
 
-export const Text = (props: ParentProps) => <span class={text}>{props.children}</span>;
+export const Text = (props: ParentProps) => (
+  <span class={`${styles["text"]}`}>{props.children}</span>
+);
