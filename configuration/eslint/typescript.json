@@ -1,0 +1,17 @@
+{
+  "overrides": [
+    {
+      "extends": ["canonical", "canonical/typescript", "canonical/module", "canonical/prettier"],
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["simple-import-sort"],
+      "rules": {
+        "import/order": "off",
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error"
+      }
+    }
+  ]
+}

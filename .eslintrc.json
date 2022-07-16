@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "./configuration/eslint/typescript",
+    "./configuration/eslint/solid",
+    "./configuration/eslint/json",
+    "./configuration/eslint/yaml"
+  ]
+}
