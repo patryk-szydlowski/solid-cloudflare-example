@@ -1,8 +1,9 @@
 {
   "overrides": [
     {
-      "extends": ["canonical/react", "canonical/jsx-a11y", "canonical/prettier"],
-      "files": ["*.jsx", "*.tsx"]
+      "extends": ["canonical/react", "canonical/jsx-a11y", "plugin:solid/typescript"],
+      "files": ["*.tsx"],
+      "plugins": ["solid"]
     }
   ]
 }
