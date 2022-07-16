@@ -1,10 +1,13 @@
 {
   "name": "solid-cloudflare-example",
+  "version": "0.0.0-development",
   "scripts": {
-    "dev": "solid-start dev",
+    "run:dev": "solid-start dev",
+    "run:prod": "solid-start start",
     "build": "solid-start build",
-    "start": "solid-start start",
-    "check:typescript": "tsc --noEmit"
+    "check": "npm-run-all --parallel --print-label check:*",
+    "check:typescript": "tsc --noEmit",
+    "check:prettier": "prettier . --check --cache"
   },
   "type": "module",
   "engines": {
@@ -20,6 +23,8 @@
   },
   "devDependencies": {
     "typescript": "4.7.4",
-    "vite": "2.9.14"
+    "vite": "2.9.14",
+    "prettier": "2.7.1",
+    "npm-run-all": "4.1.5"
   }
 }
