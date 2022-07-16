@@ -1,0 +1,25 @@
+{
+  "name": "solid-cloudflare-example",
+  "scripts": {
+    "dev": "solid-start dev",
+    "build": "solid-start build",
+    "start": "solid-start start",
+    "check:typescript": "tsc --noEmit"
+  },
+  "type": "module",
+  "engines": {
+    "node": "18",
+    "npm": "8"
+  },
+  "dependencies": {
+    "solid-app-router": "0.4.1",
+    "solid-js": "1.4.7",
+    "solid-meta": "0.27.5",
+    "solid-start": "0.1.0-alpha.91",
+    "solid-start-node": "0.1.0-alpha.91"
+  },
+  "devDependencies": {
+    "typescript": "4.7.4",
+    "vite": "2.9.14"
+  }
+}

@@ -1,0 +1,17 @@
+# IDEs and editors
+/.idea
+/*.iml
+/.vscode
+
+# generated outputs
+dist
+.solid
+.eslintcache
+*.tsbuildinfo
+
+# dependencies
+/node_modules
+
+# miscellaneous
+.DS_Store
+Thumbs.db
