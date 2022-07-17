@@ -1,10 +1,8 @@
 // @refresh reload
 import { Suspense } from "solid-js";
-import { Route, Routes } from "solid-start/data";
+import { Routes } from "solid-start/data";
 import { ErrorBoundary } from "solid-start/error-boundary";
-import { Links, Meta, Scripts } from "solid-start/root";
-
-import { Text } from "~/components/text";
+import { FileRoutes, Links, Meta, Scripts } from "solid-start/root";
 
 export default () => (
   <html lang="en">
@@ -18,7 +16,7 @@ export default () => (
       <ErrorBoundary>
         <Suspense>
           <Routes>
-            <Route element={<Text>Hello world!</Text>} path="/" />
+            <FileRoutes />
           </Routes>
         </Suspense>
       </ErrorBoundary>
