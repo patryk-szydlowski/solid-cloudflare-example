@@ -1,16 +1,8 @@
 diff --git a/node_modules/solid-start-cloudflare-pages/index.js b/node_modules/solid-start-cloudflare-pages/index.js
-index f7e155f..5d942a9 100644
+index f7e155f..3e1054d 100644
 --- a/node_modules/solid-start-cloudflare-pages/index.js
 +++ b/node_modules/solid-start-cloudflare-pages/index.js
-@@ -7,6 +7,7 @@ import { dirname, join, resolve } from "path";
- import { rollup } from "rollup";
- import { fileURLToPath } from "url";
- import vite from "vite";
-+import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
- 
- export default function () {
-   return {
-@@ -60,9 +61,10 @@ export default function () {
+@@ -60,9 +60,9 @@ export default function () {
            json(),
            nodeResolve({
              preferBuiltins: true,
@@ -19,7 +11,6 @@ index f7e155f..5d942a9 100644
            }),
 -          common()
 +          common(),
-+          vanillaExtractPlugin()
          ]
        });
  
