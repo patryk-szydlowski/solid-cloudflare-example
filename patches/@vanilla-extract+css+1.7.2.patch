@@ -1,5 +1,5 @@
 diff --git a/node_modules/@vanilla-extract/css/dist/vanilla-extract-css.esm.js b/node_modules/@vanilla-extract/css/dist/vanilla-extract-css.esm.js
-index 1e5c118..bf906b2 100644
+index 1e5c118..7e11873 100644
 --- a/node_modules/@vanilla-extract/css/dist/vanilla-extract-css.esm.js
 +++ b/node_modules/@vanilla-extract/css/dist/vanilla-extract-css.esm.js
 @@ -6,7 +6,6 @@ import { getAndIncrementRefCounter, getFileScope, hasFileScope } from '../fileSc
@@ -10,80 +10,20 @@ index 1e5c118..bf906b2 100644
  import { _ as _taggedTemplateLiteral } from './taggedTemplateLiteral-b4c22b04.esm.js';
  import outdent from 'outdent';
  import deepmerge from 'deepmerge';
-@@ -179,63 +178,12 @@ function generateIdentifier(debugId) {
- var normaliseObject = obj => walkObject(obj, () => '');
+@@ -191,13 +190,13 @@ function diffLine(value, nesting, type) {
+   var whitespace = [...Array(nesting).keys()].map(() => '  ').join('');
+   var line = "".concat(type ? type : ' ').concat(whitespace).concat(value);
  
- function validateContract(contract, tokens) {
--  var theDiff = diff(normaliseObject(contract), normaliseObject(tokens));
-   var valid = Object.keys(theDiff).length === 0;
-   return {
-     valid,
--    diffString: valid ? '' : renderDiff(contract, theDiff)
-   };
- }
- 
--function diffLine(value, nesting, type) {
--  var whitespace = [...Array(nesting).keys()].map(() => '  ').join('');
--  var line = "".concat(type ? type : ' ').concat(whitespace).concat(value);
--
 -  if (process.env.NODE_ENV !== 'test') {
--    if (type === '-') {
++  if (process.env.NODE_ENV === 'development') {
+     if (type === '-') {
 -      return chalk.red(line);
--    }
--
--    if (type === '+') {
--      return chalk.green(line);
--    }
--  }
--
--  return line;
--}
--
--function renderDiff(orig, diff) {
--  var nesting = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
--  var lines = [];
--
--  if (nesting === 0) {
--    lines.push(diffLine('{', 0));
--  }
--
--  var innerNesting = nesting + 1;
--  var keys = Object.keys(diff).sort();
--
--  for (var key of keys) {
--    var value = diff[key];
--
--    if (!(key in orig)) {
--      lines.push(diffLine("".concat(key, ": ...,"), innerNesting, '+'));
--    } else if (typeof value === 'object') {
--      lines.push(diffLine("".concat(key, ": {"), innerNesting));
--      lines.push(renderDiff(orig[key], diff[key], innerNesting));
--      lines.push(diffLine('}', innerNesting));
--    } else {
--      lines.push(diffLine("".concat(key, ": ...,"), innerNesting, '-'));
--    }
--  }
--
--  if (nesting === 0) {
--    lines.push(diffLine('}', 0));
--  }
--
--  return lines.join('\n');
--}
--
- function createVar(debugId) {
-   // Convert ref count to base 36 for optimal hash lengths
-   var refCount = getAndIncrementRefCounter().toString(36);
-@@ -274,11 +222,10 @@ function assignVars(varContract, tokens) {
-   var varSetters = {};
-   var {
-     valid,
--    diffString
-   } = validateContract(varContract, tokens);
++      return require('chalk').red(line);
+     }
  
-   if (!valid) {
--    throw new Error("Tokens don't match contract.\n".concat(diffString));
-+    throw new Error("Tokens don't match contract.");
+     if (type === '+') {
+-      return chalk.green(line);
++      return require('chalk').green(line);
+     }
    }
  
-   walkObject(tokens, (value, path) => {
