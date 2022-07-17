@@ -4,6 +4,8 @@ import { Routes } from "solid-start/data";
 import { ErrorBoundary } from "solid-start/error-boundary";
 import { FileRoutes, Links, Meta, Scripts } from "solid-start/root";
 
+import { ThemeProvider } from "~/design-system/theme-provider";
+
 export default () => (
   <html lang="en">
     <head>
@@ -13,13 +15,15 @@ export default () => (
       <Links />
     </head>
     <body>
-      <ErrorBoundary>
-        <Suspense>
-          <Routes>
-            <FileRoutes />
-          </Routes>
-        </Suspense>
-      </ErrorBoundary>
+      <ThemeProvider>
+        <ErrorBoundary>
+          <Suspense>
+            <Routes>
+              <FileRoutes />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
+      </ThemeProvider>
       <Scripts />
     </body>
   </html>

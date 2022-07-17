@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@vanilla-extract/css": "1.7.2",
+    "@vanilla-extract/recipes": "0.2.5",
+    "@vanilla-extract/sprinkles": "1.4.1",
     "solid-app-router": "0.4.1",
     "solid-js": "1.4.7",
     "solid-meta": "0.27.5",

@@ -2,11 +2,11 @@ import { recipe } from "@vanilla-extract/recipes";
 
 import { sprinkles } from "~/design-system/core/properties.css";
 
-export const text = recipe({
+export const background = recipe({
   variants: {
     color: {
-      primary: sprinkles({ color: "primary" }),
-      secondary: sprinkles({ color: "secondary" }),
+      primary: sprinkles({ backgroundColor: "primary" }),
+      secondary: sprinkles({ backgroundColor: "secondary" }),
     },
   },
 });
