@@ -1,9 +1,10 @@
 // @refresh reload
 import { Suspense } from "solid-js";
-import { Routes } from "solid-start/data";
+import { Route, Routes } from "solid-start/data";
 import { ErrorBoundary } from "solid-start/error-boundary";
 import { FileRoutes, Links, Meta, Scripts } from "solid-start/root";
 
+import { RandomRoute } from "~/components/random-route";
 import { ThemeProvider } from "~/design-system/theme-provider";
 
 export default () => (
@@ -20,6 +21,7 @@ export default () => (
           <Suspense>
             <Routes>
               <FileRoutes />
+              <Route component={RandomRoute} path="/random" />
             </Routes>
           </Suspense>
         </ErrorBoundary>

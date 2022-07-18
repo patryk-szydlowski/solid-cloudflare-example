@@ -13,12 +13,12 @@ export const [baseTheme, variables] = createTheme({
 
 export const colors = createThemeContract({
   background: {
-    primary: null,
-    secondary: null,
+    primary: "background-primary",
+    secondary: "background-secondary",
   },
   foreground: {
-    primary: null,
-    secondary: null,
+    primary: "foreground-primary",
+    secondary: "foreground-secondary",
   },
 });
 

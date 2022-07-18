@@ -4,9 +4,9 @@ import solid from "solid-start";
 import cloudflare from "solid-start-cloudflare-pages";
 import { defineConfig } from "vite";
 
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   plugins: [
-    solid({ adapter: cloudflare() }),
-    vanillaExtractPlugin({ identifiers: command === "build" ? "short" : "debug" }),
+    solid({ adapter: cloudflare(), ssr: true }),
+    vanillaExtractPlugin({ identifiers: "debug" }),
   ],
-}));
+});
